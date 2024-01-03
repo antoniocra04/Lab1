@@ -1,6 +1,4 @@
-#include <iostream>
 #include "DynamicArray.h"
-using namespace std;
 
 DynamicArray::DynamicArray()
 {
@@ -93,7 +91,6 @@ DynamicArray& DynamicArray::DeleteElement(const int& index)
 {
 	if(index < 0 || _length == 0)
 	{
-		cout << "Index < 0 or length = 0" << endl;
 		return *this;
 	}
 
@@ -173,17 +170,4 @@ int DynamicArray::BinarySearch(const int& value)
 int& DynamicArray::operator[](const int& index) const
 {
 	return _array[index];
-}
-
-ostream& operator<<(ostream& os, const DynamicArray& array)
-{
-	os << "Current array: [ ";
-
-	for (int i = 0; i < array._length; i++)
-	{
-		os << array[i] << " ";
-	}
-
-	os << "] | capacity: " << array._capacity << " | length: " << array._length;
-	return os;
 }

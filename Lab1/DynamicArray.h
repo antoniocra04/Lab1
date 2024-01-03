@@ -1,11 +1,8 @@
 ﻿#pragma once
-#include <iostream>
-
-using std::ostream;
 
 struct DynamicArray 
 {
-private:
+public:
 	int _capacity;
 	int _length;
 	int* _array;
@@ -13,7 +10,6 @@ private:
 	void IncreaseCapacity();
 	void DecreaseCapacity();
 
-public:
 	DynamicArray();
 	~DynamicArray();
 
@@ -74,5 +70,4 @@ public:
 	int BinarySearch(const int& value);
 
 	int& operator[](const int& index) const;
-	friend ostream& operator<<(ostream& os, const DynamicArray& array);
 };
